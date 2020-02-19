@@ -1,7 +1,18 @@
 <html>
-<head>
-</head>
-<body>
-<h1> TEST 1</h1>
-</body>
+  <head>
+    <title>OSINERG google search</title>
+  </head>
+  <body>
+    <div id="content"></div>
+    <script>
+      function hndlr(response) {
+      for (var i = 0; i < response.items.length; i++) {
+        var item = response.items[i];
+        document.getElementById("content").innerHTML += "<br>" + item.htmlTitle;
+      }
+    }
+    </script>
+    <script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyD6WH1VfvoJC5owUBjFPNzzyPoEAe08AgI&cx=010550136784045611760:tsxhhel4yez&q=normas&callback=hndlr">
+    </script>
+  </body>
 </html>
